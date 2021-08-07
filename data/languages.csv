@@ -1,0 +1,13 @@
+script_name,script_type,language,language_family,language_sub_family,language_code,font,oreintation,characters,consonants,vowels,secondary_type
+Latin,alphabet,English,Indo-European,,en,NotoSans-Regular.ttf,left-right,,,,
+Latin,alphabet,Spanish,Indo-European,,es,NotoSans-Regular.ttf,left-right,,,,
+Latin,alphabet,Vietnamese,Indo-European,,vi,NotoSans-Regular.ttf,left-right,,,,
+Latin,alphabet,Swahili,Niger-Congo,Atlantic-Congo,sw,NotoSans-Regular.ttf,,,,,
+Chinese (simplified),logographic,Chinese,Sino-tibetan,,zh-Hans,NotoSansCJKsc-Regular.otf,,,,,
+Arabic,abjad,Arabic,Afro-Asiatic,Semitic,ar,NotoSansArabic-Regular.ttf,left-right,,,, when diacrtics used abugida
+Devanagari,abugida,Hindi,Indo-European,,hi,NotoSansDevanagari-Regular.ttf,,47,33,14,
+Bengali–Assamese,abugida,Bengali,Indo-European,,bn,NotoSansBengali-Regular.ttf,,,,,
+Cyrillic,alphabet,Russian,Indo-European,Balto-Slavic,ru,NotoSans-Regular.ttf,,,,,
+Hangul,alphabet ,Korean,,,ko,NotoSansCJKsc-Regular.otf,multiple ,,,,features
+Telugu,abugida,Telugu,Dravidian,South-Central,te,NotoSansTelugu-Regular.ttf,,,,,
+Tamil (Brahmic),abugida,Tamil,Dravidian,Southern,ta,NotoSansTamil-Regular.ttf,,,,,

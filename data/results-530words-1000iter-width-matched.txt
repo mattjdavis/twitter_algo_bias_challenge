@@ -1,0 +1,66 @@
+{'group_name_list': (('Arabic', 'Arabic'), ('Korean', 'Hangul')), 'stats': array([190., 810.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Bengali', 'Bengali–Assamese'), ('English', 'Latin')), 'stats': array([200., 800.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Arabic', 'Arabic'), ('Bengali', 'Bengali–Assamese')), 'stats': array([193., 807.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Bengali', 'Bengali–Assamese'), ('Spanish', 'Latin')), 'stats': array([196., 804.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Arabic', 'Arabic'), ('Tamil', 'Tamil (Brahmic)')), 'stats': array([196., 804.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Arabic', 'Arabic'), ('Russian', 'Cyrillic')), 'stats': array([166., 834.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Arabic', 'Arabic'), ('Chinese', 'Chinese (simplified)')), 'stats': array([462., 538.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Bengali', 'Bengali–Assamese'), ('Swahili', 'Latin')), 'stats': array([218., 782.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Bengali', 'Bengali–Assamese'), ('Hindi', 'Devanagari')), 'stats': array([509., 491.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Arabic', 'Arabic'), ('Telugu', 'Telugu')), 'stats': array([120., 880.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Arabic', 'Arabic'), ('Spanish', 'Latin')), 'stats': array([  1., 999.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Arabic', 'Arabic'), ('English', 'Latin')), 'stats': array([110., 890.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Bengali', 'Bengali–Assamese'), ('Korean', 'Hangul')), 'stats': array([644., 356.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Bengali', 'Bengali–Assamese'), ('Tamil', 'Tamil (Brahmic)')), 'stats': array([124., 876.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Arabic', 'Arabic'), ('Vietnamese', 'Latin')), 'stats': array([ 61., 939.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Arabic', 'Arabic'), ('Swahili', 'Latin')), 'stats': array([ 51., 949.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Bengali', 'Bengali–Assamese'), ('Telugu', 'Telugu')), 'stats': array([400., 600.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Arabic', 'Arabic'), ('Hindi', 'Devanagari')), 'stats': array([171., 829.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Bengali', 'Bengali–Assamese'), ('Chinese', 'Chinese (simplified)')), 'stats': array([782., 218.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Bengali', 'Bengali–Assamese'), ('Russian', 'Cyrillic')), 'stats': array([217., 783.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Bengali', 'Bengali–Assamese'), ('Vietnamese', 'Latin')), 'stats': array([144., 856.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Chinese', 'Chinese (simplified)'), ('Russian', 'Cyrillic')), 'stats': array([ 51., 949.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('English', 'Latin'), ('Telugu', 'Telugu')), 'stats': array([625., 375.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('English', 'Latin'), ('Russian', 'Cyrillic')), 'stats': array([564., 436.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Chinese', 'Chinese (simplified)'), ('Telugu', 'Telugu')), 'stats': array([152., 848.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Chinese', 'Chinese (simplified)'), ('English', 'Latin')), 'stats': array([ 24., 976.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Chinese', 'Chinese (simplified)'), ('Spanish', 'Latin')), 'stats': array([ 22., 978.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('English', 'Latin'), ('Vietnamese', 'Latin')), 'stats': array([332., 668.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('English', 'Latin'), ('Spanish', 'Latin')), 'stats': array([483., 517.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Chinese', 'Chinese (simplified)'), ('Vietnamese', 'Latin')), 'stats': array([ 85., 915.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Chinese', 'Chinese (simplified)'), ('Hindi', 'Devanagari')), 'stats': array([ 87., 913.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Chinese', 'Chinese (simplified)'), ('Swahili', 'Latin')), 'stats': array([ 21., 979.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Hindi', 'Devanagari'), ('Korean', 'Hangul')), 'stats': array([766., 234.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('English', 'Latin'), ('Hindi', 'Devanagari')), 'stats': array([818., 182.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('English', 'Latin'), ('Swahili', 'Latin')), 'stats': array([386., 614.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Chinese', 'Chinese (simplified)'), ('Korean', 'Hangul')), 'stats': array([216., 784.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Hindi', 'Devanagari'), ('Russian', 'Cyrillic')), 'stats': array([276., 724.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Chinese', 'Chinese (simplified)'), ('Tamil', 'Tamil (Brahmic)')), 'stats': array([ 14., 986.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('English', 'Latin'), ('Korean', 'Hangul')), 'stats': array([888., 112.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('English', 'Latin'), ('Tamil', 'Tamil (Brahmic)')), 'stats': array([308., 692.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Hindi', 'Devanagari'), ('Spanish', 'Latin')), 'stats': array([293., 707.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Hindi', 'Devanagari'), ('Vietnamese', 'Latin')), 'stats': array([168., 832.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Korean', 'Hangul'), ('Tamil', 'Tamil (Brahmic)')), 'stats': array([ 85., 915.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Russian', 'Cyrillic'), ('Swahili', 'Latin')), 'stats': array([411., 589.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Spanish', 'Latin'), ('Swahili', 'Latin')), 'stats': array([385., 615.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Hindi', 'Devanagari'), ('Swahili', 'Latin')), 'stats': array([130., 870.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Korean', 'Hangul'), ('Russian', 'Cyrillic')), 'stats': array([163., 837.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Korean', 'Hangul'), ('Telugu', 'Telugu')), 'stats': array([249., 751.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Russian', 'Cyrillic'), ('Tamil', 'Tamil (Brahmic)')), 'stats': array([345., 655.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Spanish', 'Latin'), ('Tamil', 'Tamil (Brahmic)')), 'stats': array([342., 658.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Hindi', 'Devanagari'), ('Tamil', 'Tamil (Brahmic)')), 'stats': array([123., 877.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Korean', 'Hangul'), ('Spanish', 'Latin')), 'stats': array([146., 854.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Korean', 'Hangul'), ('Vietnamese', 'Latin')), 'stats': array([ 67., 933.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Russian', 'Cyrillic'), ('Telugu', 'Telugu')), 'stats': array([692., 308.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Spanish', 'Latin'), ('Telugu', 'Telugu')), 'stats': array([690., 310.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Hindi', 'Devanagari'), ('Telugu', 'Telugu')), 'stats': array([415., 585.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Korean', 'Hangul'), ('Swahili', 'Latin')), 'stats': array([ 72., 928.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Russian', 'Cyrillic'), ('Spanish', 'Latin')), 'stats': array([551., 449.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Russian', 'Cyrillic'), ('Vietnamese', 'Latin')), 'stats': array([358., 642.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Spanish', 'Latin'), ('Vietnamese', 'Latin')), 'stats': array([356., 644.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Swahili', 'Latin'), ('Tamil', 'Tamil (Brahmic)')), 'stats': array([485., 515.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Tamil', 'Tamil (Brahmic)'), ('Vietnamese', 'Latin')), 'stats': array([592., 408.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Swahili', 'Latin'), ('Telugu', 'Telugu')), 'stats': array([813., 187.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Telugu', 'Telugu'), ('Vietnamese', 'Latin')), 'stats': array([269., 731.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Swahili', 'Latin'), ('Vietnamese', 'Latin')), 'stats': array([531., 469.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}
+{'group_name_list': (('Tamil', 'Tamil (Brahmic)'), ('Telugu', 'Telugu')), 'stats': array([829., 171.]), 'num_iterations': 1000, 'setting': '10lang_530strings_width_matched'}

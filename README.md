@@ -1,78 +1,160 @@
-# Image Crop Analysis
-
-[![Open All Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/twitter-research/image-crop-analysis) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/twitter-research/image-crop-analysis/HEAD)
-
-![How does a saliency algorithm work](https://cdn.cms-twdigitalassets.com/content/dam/blog-twitter/engineering/en_us/insights/2021/imagecropping/newimagecropanimations.gif)
-
-This is a repo for the code used for reproducing our [Image Crop Analysis paper](https://arxiv.org/abs/2105.08667) as shared on [our blog post](https://blog.twitter.com/engineering/en_us/topics/insights/2021/sharing-learnings-about-our-image-cropping-algorithm.html). 
-
-If you plan to use this code please cite our paper as follows:
-
-```
-@ARTICLE{TwitterImageCrop2021,
-       author = {{Yee}, Kyra and {Tantipongpipat}, Uthaipon and {Mishra}, Shubhanshu},
-        title = "{Image Cropping on Twitter: Fairness Metrics, their Limitations, and the Importance of Representation, Design, and Agency}",
-      journal = {arXiv e-prints},
-     keywords = {Computer Science - Computers and Society, Computer Science - Computer Vision and Pattern Recognition, Computer Science - Human-Computer Interaction, Computer Science - Machine Learning},
-         year = 2021,
-        month = may,
-          eid = {arXiv:2105.08667},
-        pages = {arXiv:2105.08667},
-archivePrefix = {arXiv},
-       eprint = {2105.08667},
- primaryClass = {cs.CY},
-}
-```
-
-![Analysis of demographic bias of the image cropping algorithm](./notebooks/wiki_no_scaling_intersect_n=10000.jpg)
+# Language bias in an image cropping algorithm
 
 
-# Instructions
+## Intro
 
-- Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/individual) and then follow these steps:
-  * create a conda environment using `conda env create -f environment.yml`
-  * activate the environment using `conda activate image-crop-analysis`
-- Put a dummy jpeg image at `data/dummy.jpeg`
-- Put any additional images with `*.jpeg` extension in DATA_DIR, which is `./data`
-- If you just want to investigate how the model predicts the saliency map then you can use the notebook [notebooks/Image Annotation Dash.ipynb](notebooks/Image%20Annotation%20Dash.ipynb)
-- To reproduce the analysis first prepare the data using [notebooks/Data Preparation.ipynb](notebooks/Data%20Preparation.ipynb) and then run [notebooks/Demographic Bias Analysis.ipynb](notebooks/Demographic%20Bias%20Analysis.ipynb)
-- To reproduce the plots first run [notebooks/Demographic Bias Plots.ipynb](notebooks/Demographic%20Bias%20Plots.ipynb)
-- If you want to explore how the library behind the dashboard works see [notebooks/Image Crop Analysis.ipynb](notebooks/Image%20Crop%20Analysis.ipynb)
-- If you have the dataset prepared from the above steps then you can create the gender gaze dataset by running [notebooks/Gender Gaze Analysis.ipynb](notebooks/Gender%20Gaze%20Analysis.ipynb)
+A recent paper from a research group at Twitter identified racial and gender bias in a saliency algorithm that is used to generate image crops. The paper notes that words/text are highly salient in images. I was inspired by this fact to investigate if the saliency algorithm would exhibit bias when multiple languages are present in a image. Multilingual signs are a  common scenario on street signs and business across the entire world. A bias towards cropping one language (or script type) over another could cause unintentional harm by erasing an essential aspect of a particular culture or ethnic group. The saliency algorithm + argmax function exhibited a dramatic preference for  Latin alphabet based  scripts (English, Vietnamese, Swahili, Spanish) to non Latin based scripts (e.g. Chinese, Arabic). There were group differences in the the generated text images that could explain the bias. However, a follow up analysis where text width was controlled still resulted in a Latin-based script bias. There are interesting prefereneces in the non Latin-based languages/scripts that are not explored here, but may be worth further research. 
 
 
-## Docker Run
+## Method
 
-* Install docker 
-* Run the following commands in this root directory of this project:
-
-```bash
-docker build -t "image_crop" -f docker/Dockerfile .
-docker run -p 9000:9000 -p 8900:8900 -it image_crop
-```
-* Open the jupyter lab URL shown in terminal. 
-
-## Run on Google Colab
-
-[![Open All Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/twitter-research/image-crop-analysis)
+The base word set was generated from  a list of 1,000 of the most common words in English. Only words with length > 4 were kept, yielding 530 words. The `base set` was translated into 10  languages ['Arabic', 'English', 'Spanish', 'Russian', 'Swahili', 'Bengali', 'Vietnamese', 'Chinese', 'Hindi', 'Korean', 'Tamil', 'Telugu'] using Microsoft's Translator on Azure Cognitive Services. Each language has a particular script returned by the translator (e.g. it returns simplified rather than traditional Chinese, see Table 1 for language/script pairs). Each language/script was paired with every other language/script pair, yield 66 pairs. From each pairing, a word was drawn from the base word set corresponding to each language. This process was repeated 500,1000, or 5000 depending on the the analysis (repeat number was constrained by computational resources/time, can be increased for future analysis).  An additional dataset set (`width-matched nonense word set`) was generated to match the width of the generated text across all languages. 
 
 
-* Open a google colab notebook
-* Run the following code in the cell where `HOME_DIR` variable is set:
 
-```
-try:
-    import google.colab
-    ! pip install pandas scikit-learn scikit-image statsmodels requests dash
-    ! [[ -d image-crop-analysis ]] || git clone https://github.com/twitter-research/image-crop-analysis.git
-    HOME_DIR = Path("./image_crop_analysis").expanduser()
-    IN_COLAB = True
-except:
-    IN_COLAB = False
-```
-* Try the [notebooks/Image Crop Analysis.ipynb](https://github.com/twitter-research/image-crop-analysis/blob/main/notebooks/Image%20Crop%20Analysis.ipynb) notebook for example. 
+## Datasets
+
+**Table 1, Dataset 1**: `base set`. Example translations to each language and corresponding scripts. Note how different languages have different lengths of strings. This could influence the saliency model, if one language tends to have more characters. This motivated the generation of dataset 2 in Table 2.
+
+| Text                      | Language   | Script          |
+|:--------------------------|:-----------|:---------------------|
+| hello world               | English    | Latin                |
+| Hola mundo                | Spanish    | Latin                |
+| Chào thế giới             | Vietnamese | Latin                |
+| Vipi dunia                | Swahili    | Latin                |
+| 世界您好                  | Chinese    | Chinese (simplified) |
+| مرحبا بالعالم             | Arabic     | Arabic               |
+| हैलो वर्ल्ड                  | Hindi      | Devanagari           |
+| হ্যালো ওয়ার্ল্ড              | Bengali    | Bengali–Assamese     |
+| Всем привет               | Russian    | Cyrillic             |
+| 전 세계 여러분 안녕하세요 | Korean     | Hangul               |
+| హలో వరల్డ్                   | Telugu     | Telugu               |
+| ஹலோ உலகம்                  | Tamil      | Tamil (Brahmic)      |
+
+![example_base](doc/example_base.png)
+
+**Figure 1.** Image submitted to the model. Random English (left) vs Korean(right) words from the `base set`.
 
 
-# Security Issues?
 
-Please report sensitive security issues via Twitter's bug-bounty program (https://hackerone.com/twitter) rather than GitHub.
+**Table 2, Dataset 2**: `width-matched nonense word set`. Example translations to each language and corresponding scripts. Each word was generated by grabbing random characters from the language and building the word until it was at least 175 pixels wide. 
+
+| Text           | Language   | Script          |
+|:---------------|:-----------|:---------------------|
+| asiiiitnsnttia | English    | Latin                |
+| etsstatsants   | Spanish    | Latin                |
+| ốhhốốcccốố     | Vietnamese | Latin                |
+| PhppaopPa      | Swahili    | Latin                |
+| 瞬瞬间间瞬瞬   | Chinese    | Chinese (simplified) |
+| هاراللهرهالور  | Arabic     | Arabic               |
+| ण्णकण्षष््षष्       | Hindi      | Devanagari           |
+| ্কষ্কাষতকত       | Bengali    | Bengali–Assamese     |
+| еовввеоннв     | Russian    | Cyrillic             |
+| 간순순간순순간 | Korean     | Hangul               |
+| ాటట్ెపపుటట        | Telugu     | Telugu               |
+| ொொடநந          | Tamil      | Tamil (Brahmic)      |
+
+
+
+![example_WM](doc/example_WM.png)
+
+**Figure 2.** Image submitted to the model. Nonsense word English (left) vs Arabic(right) words from the `width-matched nonense word set`.
+
+
+
+## Results - Dataset1
+
+![english_parity_plot_base](doc/english_parity_plot_base.jpeg)
+
+**Figure.** The positive values indicate that English is preferred over the other language. Negative values indicate the other language was preferred. Maximum value 50%. The corresponding script types are in the legend. There are dramatic preference for and against English in this analysis, However I noticed that some languages had longer words on the image (Tamil, ) and some had shorter (Chinese, Arabic).
+
+![chinese_parity_plot_base](doc/chinese_parity_plot_base.jpeg)
+
+**Figure.** Same as above, with Chinese as the comparison language. In a sense, it looks like this text is "anti-preferred" by the saliency algorithm.
+
+## Results - Word width from Dataset1
+
+![text_width_base](doc/text_width_base.jpeg)
+
+**Figure.** Certain languages tend to haver shorter/longer words. This may influence the saliency model, so Dataset 2 was generated to correct for this.
+
+## Results - Dataset2
+
+
+
+### Language parity plots across width-matched nonsense words dataset
+
+![](doc/english_parity_plot_WM.jpeg)
+
+**Figure.** Here we see that English is preferred to most other languages, except the other Latin-based scripts and Tamil.
+
+### General preference for Latin-based scripts across width-matched nonsense words dataset
+
+
+
+![](doc/total_pref_WM.jpeg)
+
+**Figure**-Dataset: `width matched nonsense words`. Total times the saliency model preferred each language, across all pairs. The four Latin-based languages were generally preferred the most. Interestingly, Tamil was also highly preferred (even in these width matched dataset).  Something about this script seems to be intrinsically interesting.
+
+
+
+![pref_ratio_width_matched](doc/pref_ratio_width_matched.jpeg)
+
+![]()
+
+**Figure**-Dataset: `width matched nonsense words`. Latin-scripts are preferred by the saliency cropping algorithm over all other scripts when compared to others scripts. Preference ratio is the number of times the algorithm chose either Latin vs Other scripts or Other vs Other scripts. Independent samples t-test show a significant difference in groups (t = 2.46, p = 0.016). 
+
+
+
+## Real world examples
+
+![crop-example-coldstone](doc/crop-example-coldstone.png)
+
+
+
+![crop-example-hv](doc/crop-example-hv.png)
+
+
+
+
+
+## Submission scoring
+
+Base points: 
+
+This harm  can be considered 'erasure', a language/significant culture aspect is removed preferentially from image. Or 'ex-nomination', treating Latin-based scripts (dominate in the western world) as central human norm, especially when compared to scripts found in the East. This harm is unintentional. Given this, I calculated score for both categories
+
+Multipliers 
+
++ Damage: The harm is against a single axis of identity/cultural signifier (language)(1.2 + 1.2) / 2 = 1.2
+
++ Affected users: Most users of Twitter, especially those speak and take images of non Latin-based text. 1.2
+
++ Likelihood: Text is very prevalent in images, will happen often. 1.3
+
++ Exploitability: N/A
+
++ Justification: . 1.25
+
++ Clarity: Methodology reproducible in notebooks. Explored a potential confound (text width) and confirmed the harm was still present when controlling. Additional text parameters could be explored 1.25
+
++ Creativity: industry standard, no multiplier
+
+  
+
+If erasure: 15 X (1.2+1.2+1.3+1.25+1.25) = 93
+
+If ex-nomination: 15 X (1.2+1.2+1.3+1.25+1.25) = 124
+
+
+
+
+
+
+
+
+
+
+
+
+
