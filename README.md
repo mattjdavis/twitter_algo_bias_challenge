@@ -31,7 +31,7 @@ The base word set was generated from  a list of 1,000 of the most common words i
 | హలో వరల్డ్                   | Telugu     | Telugu               |
 | ஹலோ உலகம்                  | Tamil      | Tamil (Brahmic)      |
 
-![example_base](doc/example_base.png)
+![example_base](doc_image/example_base.png)
 
 **Figure 1.** Image submitted to the model. Random English (left) vs Korean(right) words from the `base set`.
 
@@ -56,7 +56,7 @@ The base word set was generated from  a list of 1,000 of the most common words i
 
 
 
-![example_WM](doc/example_WM.png)
+![example_WM](doc_image/example_WM.png)
 
 **Figure 2.** Image submitted to the model. Nonsense word English (left) vs Arabic(right) words from the `width-matched nonense word set`.
 
@@ -64,17 +64,17 @@ The base word set was generated from  a list of 1,000 of the most common words i
 
 ## Results - Dataset1
 
-![english_parity_plot_base](doc/english_parity_plot_base.jpeg)
+![english_parity_plot_base](doc_image/english_parity_plot_base.jpeg)
 
 **Figure.** The positive values indicate that English is preferred over the other language. Negative values indicate the other language was preferred. Maximum value 50%. The corresponding script types are in the legend. There are dramatic preference for and against English in this analysis, However I noticed that some languages had longer words on the image (Tamil, ) and some had shorter (Chinese, Arabic).
 
-![chinese_parity_plot_base](doc/chinese_parity_plot_base.jpeg)
+![chinese_parity_plot_base](doc_image/chinese_parity_plot_base.jpeg)
 
 **Figure.** Same as above, with Chinese as the comparison language. In a sense, it looks like this text is "anti-preferred" by the saliency algorithm.
 
 ## Results - Word width from Dataset1
 
-![text_width_base](doc/text_width_base.jpeg)
+![text_width_base](doc_image/text_width_base.jpeg)
 
 **Figure.** Certain languages tend to haver shorter/longer words. This may influence the saliency model, so Dataset 2 was generated to correct for this.
 
@@ -84,7 +84,7 @@ The base word set was generated from  a list of 1,000 of the most common words i
 
 ### Language parity plots across width-matched nonsense words dataset
 
-![](doc/english_parity_plot_WM.jpeg)
+![](doc_image/english_parity_plot_WM.jpeg)
 
 **Figure.** Here we see that English is preferred to most other languages, except the other Latin-based scripts and Tamil.
 
@@ -92,13 +92,13 @@ The base word set was generated from  a list of 1,000 of the most common words i
 
 
 
-![](doc/total_pref_WM.jpeg)
+![](doc_image/total_pref_WM.jpeg)
 
 **Figure**-Dataset: `width matched nonsense words`. Total times the saliency model preferred each language, across all pairs. The four Latin-based languages were generally preferred the most. Interestingly, Tamil was also highly preferred (even in these width matched dataset).  Something about this script seems to be intrinsically interesting.
 
 
 
-![pref_ratio_width_matched](doc/pref_ratio_width_matched.jpeg)
+![pref_ratio_width_matched](doc_image/pref_ratio_width_matched.jpeg)
 
 ![]()
 
@@ -108,11 +108,11 @@ The base word set was generated from  a list of 1,000 of the most common words i
 
 ## Real world examples
 
-![crop-example-coldstone](doc/crop-example-coldstone.png)
+![crop-example-coldstone](doc_image/crop-example-coldstone.png)
 
 
 
-![crop-example-hv](doc/crop-example-hv.png)
+![crop-example-hv](doc_image/crop-example-hv.png)
 
 
 
